@@ -1,5 +1,5 @@
 import React from "react";
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="px-4 pt-[190px] text-base md:text-xl">
       <div className="mb-4 h-[1px] w-auto bg-black"></div>
@@ -13,10 +13,15 @@ export default function Footer() {
           <div className="collapse md:visible md:text-2xl xl:text-[32px]">
             Contact
           </div>
-          <a href="tel:+82 10-4859-6212">+82 10-4859-6212</a>
-          <div>https://velog.io/@harenohee</div>
+          <a href="tel:+82 10-4859-6212" className="hover:text-blue50">
+            +82 10-4859-6212
+          </a>
+          <a href="https://velog.io/@harenohee" className="hover:text-blue50">
+            harenohee&apos;s Velog
+          </a>
         </div>
       </div>
     </footer>
   );
-}
+};
+export default Footer;
