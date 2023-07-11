@@ -10,13 +10,17 @@ type detailProps = {
   content: string;
 };
 
-export default function detail({ post, content }: detailProps) {
+export default function Detail({ post, content }: detailProps) {
   return (
     <div>
-      <title>{post.title}</title>
-      <h4>{post.description}</h4>
-      <p>{post.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="flex justify-between">
+        <h2>title: {post.title}</h2>
+        <span>{post.date}</span>
+      </div>
+      <div className="w-full box-border p-4 border-red-200 border mt-4">
+        <h4>{post.description}</h4>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
     </div>
   );
 }
