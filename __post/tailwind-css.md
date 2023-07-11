@@ -1,11 +1,9 @@
 ---
-title: "모르는 개 산책, 모르는 게 상책"
+title: "테일윈드 CSS 장점"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "../assets/blog/kuromi.jpeg"
-date: "2023-06-10"
-slug: "my"
+coverImage: "../assets/blog/angcake.jpeg"
+date: "2023-07-11"
+slug: "tailwind-css"
 ---
 
-## 마크다운 문법으로 작성된 문장을 HTML로 변환하기
-
-### hello hello
+## h2태그로 작성
