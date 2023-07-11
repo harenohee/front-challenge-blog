@@ -2,7 +2,7 @@ import React, { PropsWithChildren, ReactNode } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function Layout({ children }: { children: ReactNode }) {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="flex h-full flex-col">
       <Header />
@@ -10,4 +10,5 @@ export default function Layout({ children }: { children: ReactNode }) {
       <Footer />
     </div>
   );
-}
+};
+export default Layout;
