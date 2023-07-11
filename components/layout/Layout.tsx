@@ -4,9 +4,11 @@ import Header from "./Header";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex h-full flex-col">
+    <div>
       <Header />
-      <div className="flex-1 px-20">{children}</div>
+      <div className="h-auto min-h-full pb-[122px] ">
+        <div className="px-20">{children}</div>
+      </div>
       <Footer />
     </div>
   );
