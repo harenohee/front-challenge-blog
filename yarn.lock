@@ -195,6 +195,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/mdurl@^1.0.0":
+  "integrity" "sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA=="
+  "resolved" "https://registry.npmjs.org/@types/mdurl/-/mdurl-1.0.2.tgz"
+  "version" "1.0.2"
+
 "@types/ms@*":
   "integrity" "sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA=="
   "resolved" "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz"
@@ -1856,16 +1861,17 @@
     "@types/mdast" "^3.0.0"
     "unist-util-is" "^5.0.0"
 
-"mdast-util-to-hast@^12.0.0":
-  "integrity" "sha512-pits93r8PhnIoU4Vy9bjW39M2jJ6/tdHyja9rrot9uujkN7UTU9SDnE6WNJz/IGyQk3XHX6yNNtrBH6cQzm8Hw=="
-  "resolved" "https://registry.npmjs.org/mdast-util-to-hast/-/mdast-util-to-hast-12.3.0.tgz"
-  "version" "12.3.0"
+"mdast-util-to-hast@^11.0.0":
+  "integrity" "sha512-4o3Cli3hXPmm1LhB+6rqhfsIUBjnKFlIUZvudaermXB+4/KONdd/W4saWWkC+LBLbPMqhFSSTSRgafHsT5fVJw=="
+  "resolved" "https://registry.npmjs.org/mdast-util-to-hast/-/mdast-util-to-hast-11.3.0.tgz"
+  "version" "11.3.0"
   dependencies:
     "@types/hast" "^2.0.0"
     "@types/mdast" "^3.0.0"
+    "@types/mdurl" "^1.0.0"
     "mdast-util-definitions" "^5.0.0"
-    "micromark-util-sanitize-uri" "^1.1.0"
-    "trim-lines" "^3.0.0"
+    "mdurl" "^1.0.0"
+    "unist-builder" "^3.0.0"
     "unist-util-generated" "^2.0.0"
     "unist-util-position" "^4.0.0"
     "unist-util-visit" "^4.0.0"
@@ -1890,6 +1896,11 @@
   "version" "3.2.0"
   dependencies:
     "@types/mdast" "^3.0.0"
+
+"mdurl@^1.0.0":
+  "integrity" "sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g=="
+  "resolved" "https://registry.npmjs.org/mdurl/-/mdurl-1.0.1.tgz"
+  "version" "1.0.1"
 
 "merge-stream@^2.0.0":
   "integrity" "sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w=="
@@ -2043,7 +2054,7 @@
   dependencies:
     "micromark-util-types" "^1.0.0"
 
-"micromark-util-sanitize-uri@^1.0.0", "micromark-util-sanitize-uri@^1.1.0":
+"micromark-util-sanitize-uri@^1.0.0":
   "integrity" "sha512-QO4GXv0XZfWey4pYFndLUKEAktKkG5kZTdUNaTAkzbuJxn2tNBOr+QtxR2XpWaMhbImT2dPzyLrPXLlPhph34A=="
   "resolved" "https://registry.npmjs.org/micromark-util-sanitize-uri/-/micromark-util-sanitize-uri-1.2.0.tgz"
   "version" "1.2.0"
@@ -2537,15 +2548,15 @@
     "define-properties" "^1.2.0"
     "functions-have-names" "^1.2.3"
 
-"remark-html@^15.0.2":
-  "integrity" "sha512-/CIOI7wzHJzsh48AiuIyIe1clxVkUtreul73zcCXLub0FmnevQE0UMFDQm7NUx8/3rl/4zCshlMfqBdWScQthw=="
-  "resolved" "https://registry.npmjs.org/remark-html/-/remark-html-15.0.2.tgz"
-  "version" "15.0.2"
+"remark-html@^14.0.0":
+  "integrity" "sha512-ISQjSlOI3Hb99REjDz0cAhPJVJZDednsj4GNj4Ve7DEZdEXhVPOzBvym0Di+1K3p/RmKXqSw0r02JDmtATh6Dw=="
+  "resolved" "https://registry.npmjs.org/remark-html/-/remark-html-14.0.0.tgz"
+  "version" "14.0.0"
   dependencies:
     "@types/mdast" "^3.0.0"
     "hast-util-sanitize" "^4.0.0"
     "hast-util-to-html" "^8.0.0"
-    "mdast-util-to-hast" "^12.0.0"
+    "mdast-util-to-hast" "^11.0.0"
     "unified" "^10.0.0"
 
 "remark-parse@^10.0.0":
@@ -2908,11 +2919,6 @@
   dependencies:
     "is-number" "^7.0.0"
 
-"trim-lines@^3.0.0":
-  "integrity" "sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg=="
-  "resolved" "https://registry.npmjs.org/trim-lines/-/trim-lines-3.0.1.tgz"
-  "version" "3.0.1"
-
 "trough@^2.0.0":
   "integrity" "sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g=="
   "resolved" "https://registry.npmjs.org/trough/-/trough-2.1.0.tgz"
@@ -2998,6 +3004,13 @@
     "is-plain-obj" "^4.0.0"
     "trough" "^2.0.0"
     "vfile" "^5.0.0"
+
+"unist-builder@^3.0.0":
+  "integrity" "sha512-gnpOw7DIpCA0vpr6NqdPvTWnlPTApCTRzr+38E6hCWx3rz/cjo83SsKIlS1Z+L5ttScQ2AwutNnb8+tAvpb6qQ=="
+  "resolved" "https://registry.npmjs.org/unist-builder/-/unist-builder-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "@types/unist" "^2.0.0"
 
 "unist-util-generated@^2.0.0":
   "integrity" "sha512-qF72kLmPxAw0oN2fwpWIqbXAVyEqUzDHMsbtPvOudIlUzXYFIeQIuxXQCRCFh22B7cixvU0MG7m3MW8FTq/S+A=="
