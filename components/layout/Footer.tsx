@@ -1,7 +1,7 @@
 import React from "react";
 const Footer = () => {
   return (
-    <footer className="relative -translate-y-full px-4 h-[122px] text-base md:text-xl">
+    <footer className="absolute bottom-0 -translate-y-full px-4 h-[122px] text-base md:text-xl">
       <div className="mb-4 h-[1px] w-auto bg-black"></div>
       <div className="mx-4 grid mobile:grid-rows-1 md:grid-cols-2">
         <p className="md:min-w-[420px]">
