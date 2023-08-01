@@ -6,11 +6,16 @@ type postProps = {
 
 export default function List({ post }: postProps) {
   return (
-    <div key={post.slug} className="grid grid-cols-2 gap-8">
+    <div
+      key={post.slug}
+      className="w-[80%] h-20 hover:bg-gradient-to-r from-lime-50 to-indigo-100 rounded-md cursor-pointer"
+    >
       <Link href={`/${post.slug}`}>
-        <li className="hover:font-semibold cursor-pointer">{post.title}</li>
+        <ul>
+          <li className="w-full hover:font-semibold">{post.title}</li>
+          <li className="text-sm">{post.date}</li>
+        </ul>
       </Link>
-      <li className="text-sm">{post.date}</li>
     </div>
   );
 }
