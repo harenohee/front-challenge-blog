@@ -14,11 +14,10 @@ export default function Detail({ post, content }: detailProps) {
   return (
     <div>
       <div className="flex justify-between">
-        <h2>title: {post.title}</h2>
+        <h2>{post.title}</h2>
         <span>{post.date}</span>
       </div>
       <div className="w-full box-border p-4 border-red-200 border mt-4">
-        <h4>{post.description}</h4>
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </div>
