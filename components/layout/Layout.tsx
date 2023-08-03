@@ -5,8 +5,8 @@ import Header from "./Header";
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className="h-auto min-h-full pb-[122px]">
-        <Header />
+      <Header />
+      <div className="h-auto min-h-full pb-32">
         <div className="px-20">{children}</div>
       </div>
       <Footer />
