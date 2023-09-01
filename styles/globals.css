@@ -15,8 +15,7 @@
     @apply text-inherit;
     @apply no-underline;
   }
-}
-
-* {
-  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
 }
