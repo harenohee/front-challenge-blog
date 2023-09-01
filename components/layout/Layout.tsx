@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <>
       <Header />
       <div className="h-auto min-h-full pb-32">
-        <div className="px-20">{children}</div>
+        <div className="px-60">{children}</div>
       </div>
       <Footer />
     </>

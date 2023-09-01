@@ -9,7 +9,7 @@
   html,
   body {
     @apply h-full;
-    @apply bg-[#f5f5f3];
+    @apply bg-[#fff];
   }
   a {
     @apply text-inherit;
