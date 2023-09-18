@@ -1,12 +1,22 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import PostType from "../interfaces/post";
 
 const postDirectory = join(process.cwd(), "__post");
 // md파일 get하는 함수
 export const getPostSlugs = () => {
   return fs.readdirSync(postDirectory);
+};
+
+// file get metadata
+export const getMetadata = () => {
+  const files = fs.readdirSync(join(process.cwd(), "__post"));
+  const posts = files.map((file) => {
+    const rawData = fs.readFileSync(join("__post", file), "utf-8");
+    const { data } = matter(rawData);
+    return data;
+  });
+  return posts;
 };
 
 export const getPostBySlugs = (slug: string) => {
@@ -22,11 +32,17 @@ export const getPostBySlugs = (slug: string) => {
 export const getAllPosts = () => {
   const slugs = getPostSlugs();
   const posts = slugs
-    .map(
-      (file) => getPostBySlugs(file).data
-      // const rawData = fs.readFileSync(join("__post", file), "utf-8");
-      // const { data } = matter(rawData);
-    )
+    .map((file) => getPostBySlugs(file).data)
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   return posts;
+};
+
+// 파라미터로 넘겨받은 태그에 맞는 post만 get하는 함수
+export const getByTag = (tag: string) => {
+  const slugs = getPostSlugs();
+  const taggedPosts = slugs
+    .map((file) => getPostBySlugs(file).data)
+    .filter((post) => post.tags.includes(tag))
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
+  return taggedPosts;
 };
