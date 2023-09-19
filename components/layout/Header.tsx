@@ -4,7 +4,7 @@ import logo from "../../assets/blog/logo.jpg";
 import Image from "next/image";
 const Header = () => {
   return (
-    <div className="sticky top-0 w-full bg-white flex justify-center items-center">
+    <div className="sticky top-0 w-full bg-white flex justify-center items-center h-[88px]">
       <Link href="/" className="cursor-pointer">
         <a>
           <Image src={logo} alt="logo_img" width={40} height={88} />
