@@ -46,28 +46,30 @@ export async function getStaticProps({ params }: Params) {
 
 export const getStaticPaths = async () => {
   const posts = getMetadata();
-  let path: any = [];
+  const temp: any = [];
+  for (const ele of posts) {
+    temp.push(ele.tags);
+  }
+  console.log(temp);
   return {
     paths: posts.map((t) => {
-      console.log(t.tags);
-      if (t.tags.includes(",")) {
-        let temp;
-        temp = t.tags.split(",");
-        console.log(temp);
-        // return {
-        //   params: {
-        //     tag: path.join(" "),
-        //   },
-        // };
-        return path;
+      console.log(t);
+      if (t.tags.length > 1) {
+        for (const ele of t.tags) {
+          return {
+            params: {
+              tag: ele,
+            },
+          };
+        }
+      } else {
+        return {
+          params: {
+            // tag: path.,
+            tag: t.tags.join(""),
+          },
+        };
       }
-      path.push(t.tags);
-      console.log(path);
-      return {
-        params: {
-          tag: path.join(","),
-        },
-      };
     }),
     fallback: false,
   };
