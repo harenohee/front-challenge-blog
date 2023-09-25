@@ -18,7 +18,6 @@ const TagList = ({ taggedPosts }: any) => {
   //   }, []);
   return (
     <div>
-      <div>아니</div>
       <ul>
         {taggedPosts.map((post: any) => (
           <List post={post} key={post?.slug} />
@@ -34,7 +33,6 @@ type Params = {
   };
 };
 export async function getStaticProps({ params }: Params) {
-  console.log(params);
   const taggedPosts = getByTag(params.tag);
 
   return {
@@ -46,31 +44,36 @@ export async function getStaticProps({ params }: Params) {
 
 export const getStaticPaths = async () => {
   const posts = getMetadata();
-  const temp: any = [];
-  for (const ele of posts) {
-    temp.push(ele.tags);
+  const temp: any[] = [];
+  for (let i of posts) {
+    if (i.tags.length > 1) {
+      for (let j of i.tags) {
+        temp.push(j);
+      }
+    } else {
+      // console.log(i.tags);
+      temp.push(i.tags);
+    }
   }
-  console.log(temp);
+  // console.log(temp);
   return {
-    paths: posts.map((t) => {
-      console.log(t);
-      if (t.tags.length > 1) {
-        for (const ele of t.tags) {
-          return {
-            params: {
-              tag: ele,
-            },
-          };
-        }
-      } else {
+    paths: temp.map((t) => {
+      // console.log(t);
+      if (typeof t === "string") {
         return {
           params: {
-            // tag: path.,
-            tag: t.tags.join(""),
+            tag: t,
+          },
+        };
+      }
+      if (typeof t === "object") {
+        return {
+          params: {
+            tag: t.join(""),
           },
         };
       }
     }),
-    fallback: false,
+    fallback: true,
   };
 };
