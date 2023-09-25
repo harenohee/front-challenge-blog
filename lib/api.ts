@@ -42,7 +42,9 @@ export const getByTag = (tag: string) => {
   const slugs = getPostSlugs();
   const taggedPosts = slugs
     .map((file) => getPostBySlugs(file).data)
-    .filter((post) => post.tags.includes(tag))
-    .sort((a, b) => (a.date > b.date ? -1 : 1));
-  return taggedPosts;
+    .filter((post) => {
+      return post.tags.includes(tag);
+    });
+  const result = taggedPosts.sort((a, b) => (a.date > b.date ? -1 : 1));
+  return result;
 };
