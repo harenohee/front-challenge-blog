@@ -3,6 +3,7 @@ title: "자식 컴포넌트에서 부모 컴포넌트로 데이터 전달 방법
 description: "부모 컴포넌트에서 자식으로의 데이터 전달 방법과 그 반대의 경우 살펴보기"
 date: "2023-07-10"
 slug: "ChildToParentComponent"
+tags: ["Job"]
 ---
 
 ### 부모 컴포넌트 → 자식 : props 이용하면 됨.
