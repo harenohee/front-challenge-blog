@@ -2,27 +2,15 @@ import List from "../components/List";
 import { getByTag, getMetadata, getPostBySlugs } from "../lib/api";
 
 const TagList = ({ taggedPosts }: any) => {
-  //   const [filteredPost, setFilteredPost] = useState<PostType[]>([]);
-  //   const postFiltering = () => {
-  //     // const filteredData = allPosts.filter((post) => post.tag == tagState);
-  //     const filteredData = allPosts.map((post) => {
-  //       if (post.tag.includes(readTagState as unknown as string)) {
-  //         return post;
-  //       }
-  //     });
-
-  //     setFilteredPost(filteredData as unknown as PostType[]);
-  //   };
-  //   useEffect(() => {
-  //     postFiltering();
-  //   }, []);
   return (
     <div>
-      <ul>
-        {taggedPosts.map((post: any) => (
-          <List post={post} key={post?.slug} />
-        ))}
-      </ul>
+      {taggedPosts && (
+        <ul>
+          {taggedPosts.map((post: any) => (
+            <List post={post} key={post?.slug} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
@@ -58,7 +46,7 @@ export const getStaticPaths = async () => {
   // console.log(temp);
   return {
     paths: temp.map((t) => {
-      // console.log(t);
+      console.log(typeof t);
       if (typeof t === "string") {
         return {
           params: {
@@ -74,6 +62,6 @@ export const getStaticPaths = async () => {
         };
       }
     }),
-    fallback: true,
+    fallback: false,
   };
 };
