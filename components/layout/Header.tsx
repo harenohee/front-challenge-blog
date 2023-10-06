@@ -1,10 +1,15 @@
+import Link from "next/link";
 import React from "react";
+import logo from "../../assets/blog/logo.jpg";
+import Image from "next/image";
 const Header = () => {
   return (
-    <div className="h-20 w-full">
-      <div className="fixed left-0 top-0 bg-red-200 rounded-sm text-xl px-2">
-        Blog
-      </div>
+    <div className="sticky top-0 w-full bg-white flex justify-center items-center h-[88px]">
+      <Link href="/" className="cursor-pointer">
+        <a>
+          <Image src={logo} alt="logo_img" width={40} height={88} />
+        </a>
+      </Link>
     </div>
   );
 };

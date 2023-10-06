@@ -3,6 +3,7 @@ title: "css position 속성에 대하여"
 description: "position: 요소를 배치하는 방법에 대해 정의하는 속성"
 date: "2023-08-01"
 slug: "CSSPosition"
+tags: ["CSS"]
 ---
 
 **position**

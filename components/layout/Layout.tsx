@@ -6,8 +6,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="h-auto min-h-full pb-32">
-        <div className="px-20">{children}</div>
+      <div className="h-auto min-h-full pb-32 w-full">
+        <div className="flex items-center justify-center w-full">
+          {children}
+        </div>
       </div>
       <Footer />
     </>

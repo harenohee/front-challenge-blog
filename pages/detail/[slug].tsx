@@ -1,9 +1,7 @@
-import fs from "fs";
-import { join } from "path";
-import matter from "gray-matter";
-import PostType from "../interfaces/post";
+import { PostType } from "../../interfaces/post";
 import { remark } from "remark";
 import html from "remark-html";
+import { getMetadata, getPostBySlugs } from "../../lib/api";
 
 type detailProps = {
   post: PostType;
@@ -30,27 +28,19 @@ type Params = {
   };
 };
 export async function getStaticProps({ params }: Params) {
-  const post = fs.readFileSync(join("__post", `${params.slug}.md`), "utf-8");
-  const { data, content } = matter(post);
-
-  const processedContent = await remark().use(html).process(content);
+  const post = getPostBySlugs(params.slug);
+  const processedContent = await remark().use(html).process(post.content);
   const contentToHTML = processedContent.toString();
 
   return {
     props: {
-      post: data,
+      post: post.data,
       content: contentToHTML,
     },
   };
 }
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(join(process.cwd(), "__post"));
-
-  const posts = files.map((file) => {
-    const rawData = fs.readFileSync(join("__post", file), "utf-8");
-    const { data } = matter(rawData);
-    return data;
-  });
+  const posts = getMetadata();
 
   return {
     paths: posts.map((post) => {
